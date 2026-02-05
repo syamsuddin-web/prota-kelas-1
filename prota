@@ -1,0 +1,1276 @@
+<html lang="id"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROTA Kelas 1 - UPT SD Negeri 55 Otting</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>body { margin: 0; }</style><style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1e5799 0%, #207cca 51%, #2989d8 100%);
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        header h2 {
+            font-size: 20px;
+            font-weight: normal;
+            opacity: 0.9;
+        }
+        
+        .school-info {
+            background-color: #e8f4fc;
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #d1e3f2;
+        }
+        
+        .year-info {
+            background-color: #f0f8ff;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            color: #1e5799;
+        }
+        
+        .navigation {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            background-color: #f8fafc;
+            padding: 15px;
+            border-bottom: 1px solid #e2e8f0;
+            gap: 10px;
+        }
+        
+        .subject-btn {
+            background-color: white;
+            border: 2px solid #2989d8;
+            color: #2989d8;
+            padding: 10px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .subject-btn:hover {
+            background-color: #2989d8;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .subject-btn.active {
+            background-color: #1e5799;
+            border-color: #1e5799;
+            color: white;
+        }
+        
+        .content-area {
+            padding: 30px;
+            min-height: 600px;
+        }
+        
+        .subject-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .subject-content.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .subject-header {
+            background-color: #f0f8ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            border-left: 5px solid #2989d8;
+        }
+        
+        .subject-header h3 {
+            color: #1e5799;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        .subject-header p {
+            color: #555;
+            margin-bottom: 5px;
+        }
+        
+        .prota-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .prota-table th {
+            background-color: #1e5799;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            border: 1px solid #1a4a82;
+        }
+        
+        .prota-table td {
+            padding: 12px 15px;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .prota-table tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+        
+        .prota-table tr:hover {
+            background-color: #f0f7ff;
+        }
+        
+        .semester-divider {
+            background-color: #e8f4fc !important;
+            font-weight: bold;
+            color: #1e5799;
+            font-size: 18px;
+        }
+        
+        .footer {
+            background-color: #1e5799;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-top: 30px;
+            border-radius: 0 0 10px 10px;
+        }
+        
+        .signature-section {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+        }
+        
+        .signature {
+            text-align: center;
+            width: 45%;
+        }
+        
+        .signature h4 {
+            margin-bottom: 40px;
+            color: #1e5799;
+        }
+        
+        .signature p {
+            margin-top: 60px;
+            font-weight: bold;
+        }
+        
+        .note {
+            background-color: #fff9e6;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #ffcc00;
+            margin-top: 20px;
+        }
+        
+        .download-btn {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+        
+        .download-btn:hover {
+            background-color: #3d8b40;
+        }
+        
+        @media (max-width: 768px) {
+            .navigation {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .subject-btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .prota-table {
+                display: block;
+                overflow-x: auto;
+            }
+            
+            .signature-section {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .signature {
+                width: 100%;
+                margin-bottom: 30px;
+            }
+        }
+        
+        .no-data {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+            font-style: italic;
+        }
+        
+        .file-origin {
+            font-size: 14px;
+            color: #666;
+            margin-top: 5px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>PROGRAM TAHUNAN (PROTA)</h1>
+            <h2>KELAS I - UPT SD NEGERI 55 OTTING</h2>
+        </header>
+        
+        <div class="school-info">
+            <p><strong>Tahun Pelajaran:</strong> 2025/2026 | <strong>Fase:</strong> A - I | <strong>Semester:</strong> 1 &amp; 2</p>
+        </div>
+        
+        <div class="year-info">
+            <p>Tahun Penyusunan: 2025 / 2026</p>
+        </div>
+        
+        <div class="navigation">
+            <button class="subject-btn active" data-subject="indonesia">
+                <i class="fas fa-book"></i> Bahasa Indonesia
+            </button>
+            <button class="subject-btn" data-subject="matematika">
+                <i class="fas fa-calculator"></i> Matematika
+            </button>
+            <button class="subject-btn" data-subject="pkn">
+                <i class="fas fa-flag"></i> Pendidikan Pancasila
+            </button>
+            <button class="subject-btn" data-subject="bugis">
+                <i class="fas fa-language"></i> Bahasa Bugis Bone
+            </button>
+            <button class="subject-btn" data-subject="seni">
+                <i class="fas fa-palette"></i> Seni Rupa
+            </button>
+        <a class="download-btn" href="javascript:void(0)"><i class="fas fa-download"></i> Simpan sebagai HTML Offline</a></div>
+        
+        <div class="content-area">
+            <!-- Bahasa Indonesia -->
+            <div class="subject-content active" id="indonesia">
+                <div class="subject-header">
+                    <h3>PROGRAM TAHUNAN - BAHASA INDONESIA</h3>
+                    <p><strong>Nama Penyusun:</strong> Syamsuddin, S.Pd.</p>
+                    <p><strong>Jumlah JP:</strong> 64 JP (8 Bab)</p>
+                    <div class="file-origin">Sumber: PROTA INDONESIA 1.docx</div>
+                </div>
+                
+                <table class="prota-table">
+                    <thead>
+                        <tr>
+                            <th width="5%">No</th>
+                            <th width="45%">Alur Tujuan Pembelajaran (ATP)</th>
+                            <th width="30%">Materi</th>
+                            <th width="10%">JP</th>
+                            <th width="10%">Smt</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="semester-divider">
+                            <td colspan="5">SEMESTER 1</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>
+                                <ul>
+                                    <li>Menyimak bacaan yang menyajikan kosakata berawalan 'b' dan menanggapi pertanyaan guru</li>
+                                    <li>Menyimak guru melafalkan bunyi kata yang berawalan dengan huruf 'b' dan menirukannya</li>
+                                    <li>Menyimak guru merangkai bunyi huruf 'b' dan huruf vokal kemudian menirukannya</li>
+                                    <li>Menunjukkan kata-kata yang diawali dengan sukukata 'bo-' dan 'bi-'</li>
+                                    <li>Menulis huruf 'b' dan 'B'</li>
+                                    <li>Mengenali dan membaca kata-kata yang diawali dengan huruf 'b' secara berulang-ulang</li>
+                                </ul>
+                            </td>
+                            <td>BAB 1 BUNYI APA?<br>
+                                A. Abjad<br>
+                                B. Suku kata 'bo', 'bi', dan 'ba'<br>
+                                C. Nama diri dan benda kesukaan<br>
+                                D. Kata yang diawali dengan suku kata 'bo' dan 'bi'<br>
+                                E. Huruf kapital 'B' dan huruf kecil 'b'<br>
+                                F. Kata yang diawali dengan suku kata 'ba', 'bu', dan 'be'<br>
+                                G. Kata yang diawali huruf 'b'
+                            </td>
+                            <td>8 JP</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>
+                                <ul>
+                                    <li>Menyimak bacaan yang menyajikan kosakata berawalan 'h' dan menanggapi pertanyaan guru</li>
+                                    <li>Menyimak guru melafalkan kalimat yang diakhiri tanda seru dan tanda tanya, lalu menirukannya</li>
+                                    <li>Menyimak guru merangkai bunyi huruf 'h' dan 'c' dan huruf vokal kemudian menirukannya</li>
+                                    <li>Menuliskan suku kata yang berawalan huruf 'h'</li>
+                                    <li>Menulis huruf 'H' dan 'h'</li>
+                                    <li>Mengenali dan membaca kata-kata yang diawali dengan huruf 'h' dan 'c' secara berulang-ulang</li>
+                                </ul>
+                            </td>
+                            <td>BAB 2 AYO, BERMAIN<br>
+                                A. Kalimat tanya, kalimat perintah, kalimat ajakan, dan kalimat larangan<br>
+                                B. Suku kata 'ha', 'hi', 'hu', 'he,' 'ho'<br>
+                                C. Huruf kapital 'H', huruf kecil 'h', dan suku kata 'ha', 'hi', 'hu'<br>
+                                D. Nama teman di papan nama kelas
+                            </td>
+                            <td>8 JP</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>
+                                <ul>
+                                    <li>Menyimak bacaan yang menyajikan kosakata berawalan 'k' dan menanggapi pertanyaan guru</li>
+                                    <li>Menyimak guru melafalkan kata yang berawalan huruf 'k', lalu menirukannya</li>
+                                    <li>Menyimak guru merangkai bunyi huruf 'k' dan huruf vokal kemudian menirukannya</li>
+                                    <li>Menuliskan suku kata 'ku'</li>
+                                    <li>Mengenali dan membaca kata-kata yang diawali dengan huruf 'k' secara berulang-ulang</li>
+                                </ul>
+                            </td>
+                            <td>BAB 3 AWAS KUMAN<br>
+                                A. Cerita bergambar "Awas Kuman!"<br>
+                                B. Kata 'kuman'<br>
+                                C. Huruf dan suku kata pada kata 'kuman'<br>
+                                D. Teks nonfiksi "Jangan Lupa!"<br>
+                                E. Kata yang diawali dengan huruf 'k'<br>
+                                F. Nama binatang yang diawali dengan huruf 'k'
+                            </td>
+                            <td>8 JP</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>
+                                <ul>
+                                    <li>Menyimak guru membaca nama binatang yang berawalan 'l' dan menirukan gerakannya</li>
+                                    <li>Menyimak guru melafalkan nama binatang yang diawali dengan huruf 'l' dan menirukannya</li>
+                                    <li>Menyimak guru merangkai bunyi huruf 'l' dan huruf vokal kemudian menirukannya</li>
+                                    <li>Menunjukkan suku kata 'la-', 'lu-', 'li-', 'le-' pada nama binatang</li>
+                                    <li>Menulis suku kata 'la-', 'lu-', 'li-', 'le-'</li>
+                                    <li>Mengenali dan membaca nama binatang yang diawali dengan huruf 'l' secara berulang-ulang</li>
+                                </ul>
+                            </td>
+                            <td>BAB 4 AKU BISA<br>
+                                A. Kata yang diawali huruf 'l'<br>
+                                B. Huruf 'L' dan 'l'<br>
+                                C. Suku kata 'la', 'lu', 'li', dan 'le'
+                            </td>
+                            <td>8 JP</td>
+                            <td>1</td>
+                        </tr>
+                        <tr class="semester-divider">
+                            <td colspan="5">SEMESTER 2</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>
+                                <ul>
+                                    <li>Menyimak guru membaca kalimat berakhiran tanda (.) dan menirukan intonasinya</li>
+                                    <li>Menemukan huruf m dan mengenali bunyi huruf 'm' pada kata-kata yang dibacakan guru</li>
+                                    <li>Menyimak guru merangkai bunyi huruf 'm' dan huruf vokal kemudian menirukannya</li>
+                                    <li>Melengkapi kata-kata dengan suku kata berawalan 'm'</li>
+                                    <li>Mengenali dan membaca kata yang diawali dengan huruf 'm' secara berulang-ulang</li>
+                                </ul>
+                            </td>
+                            <td>BAB 5 TEMAN BARU<br>
+                                A. Kata yang diawali dengan huruf 'm'<br>
+                                B. Tanda baca titik<br>
+                                C. Suku kata yang diawali dengan huruf 'm'<br>
+                                D. Tanda baca titik<br>
+                                E. Teks nonfiksi "Apa yang Harus Mimi Katakan?"
+                            </td>
+                            <td>8 JP</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>
+                                <ul>
+                                    <li>Menyimak guru membaca cerita dengan kata berawalan huruf 'g'</li>
+                                    <li>Menyimak guru melafalkan kata yang diawali dengan huruf 'g' dan menirukannya</li>
+                                    <li>Mengenali dan membaca kata yang diawali dengan huruf 'g' secara berulang-ulang</li>
+                                    <li>Menuliskan kata yang diawali dengan huruf 'g'</li>
+                                    <li>Memainkan permainan ikatan dengan suku kata yang diawali dengan huruf 'g'</li>
+                                </ul>
+                            </td>
+                            <td>BAB 6 TEMANKU BERBEDA<br>
+                                A. Kata yang diawali dengan huruf 'g'<br>
+                                B. Suku kata dan kata yang diawali dengan huruf 'g'<br>
+                                C. Kata yang diawali dengan huruf 'g'<br>
+                                D. Lambang bilangan dan gambar "Semua Berbeda"
+                            </td>
+                            <td>8 JP</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>
+                                <ul>
+                                    <li>Menyimak guru membaca cerita kemudian menyebutkan kata-kata yang dikenali dari teks yang disimak dan gambar yang diamatinya</li>
+                                    <li>Menyimak guru melafalkan dan mengeja kata-kata yang terdapat pada cerita dan menirukannya</li>
+                                    <li>Melengkapi nama kata benda dengan suku kata yang tepat</li>
+                                    <li>Menuliskan nama-nama kata benda yang dipilih</li>
+                                    <li>Mengenali dan membaca kata-kata benda secara berulang-ulang</li>
+                                </ul>
+                            </td>
+                            <td>BAB 7 AKU INGIN<br>
+                                A. Cerita "Bimo di Pasar"<br>
+                                B. Kata benda<br>
+                                C. Suku kata<br>
+                                D. Gambar uang logam dan uang kertas
+                            </td>
+                            <td>8 JP</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>
+                                <ul>
+                                    <li>Mengamati dan menandai gambar benda sesuai instruksi guru</li>
+                                    <li>Menceritakan benda yang ada di sebelah kiri dan sebelah kanannya</li>
+                                    <li>Menuliskan nama benda yang ada di sebelah kiri dan kanannya</li>
+                                    <li>Berlatih mengeja dan membaca kata-kata benda yang sering ditemui dan nama profesi dengan bimbingan guru</li>
+                                    <li>Menuliskan kata yang menunjukkan arah, posisi, dan profesi dengan bantuan guru</li>
+                                    <li>Mengenali dan membaca kata yang menunjukkan arah dan posisi secara berulang-ulang</li>
+                                </ul>
+                            </td>
+                            <td>BAB 8 DI SEKITAR RUMAH<br>
+                                A. Gambar peta<br>
+                                B. Letak kiri dan kanan<br>
+                                C. Benda yang terletak di kanan dan kiri<br>
+                                D. Kata-kata yang menunjukkan letak dan posisi<br>
+                                E. Kata terkait profesi<br>
+                                F. Kalimat pengandaian gagasan
+                            </td>
+                            <td>8 JP</td>
+                            <td>2</td>
+                        </tr>
+                        <tr class="semester-divider">
+                            <td colspan="3">Cadangan Jam Pelajaran</td>
+                            <td colspan="2">8 JP</td>
+                        </tr>
+                        <tr class="semester-divider">
+                            <td colspan="3">Jumlah Jam Pelajaran</td>
+                            <td colspan="2">64 JP</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="signature-section">
+                    <div class="signature">
+                        <h4>Kepala UPT SD Negeri 55 Otting</h4>
+                        <p>ANDI MUIN K, S.Pd.</p>
+                        <p>NIP. 19690315 200701 1 028</p>
+                    </div>
+                    <div class="signature">
+                        <h4>Guru Kelas 1</h4>
+                        <p>SYAMSUDDIN, S.Pd.</p>
+                        <p>NIP. 19820719 202221 1 015</p>
+                        <p>Otting, 14 Juli 2025</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Matematika -->
+            <div class="subject-content" id="matematika">
+                <div class="subject-header">
+                    <h3>PROGRAM TAHUNAN - MATEMATIKA</h3>
+                    <p><strong>Nama Penyusun:</strong> Syamsuddin, S.Pd.</p>
+                    <p><strong>Jumlah JP:</strong> 64 JP (8 Bab)</p>
+                    <div class="file-origin">Sumber: PROTA MTK I.docx</div>
+                </div>
+                
+                <table class="prota-table">
+                    <thead>
+                        <tr>
+                            <th width="5%">No</th>
+                            <th width="45%">Alur Tujuan Pembelajaran (ATP)</th>
+                            <th width="30%">Materi</th>
+                            <th width="10%">JP</th>
+                            <th width="10%">Smt</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="semester-divider">
+                            <td colspan="5">SEMESTER 1</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>
+                                <ul>
+                                    <li>Menghitung banyak benda sampai dengan 10</li>
+                                    <li>Membaca lambang bilangan sampai dengan 10</li>
+                                    <li>Menulis lambang bilangan sampai dengan 10</li>
+                                    <li>Mengenal bilangan 0 dengan menunjukkan model konkret</li>
+                                    <li>Menunjukkan konsep sama banyak, lebih banyak, dan lebih sedikit</li>
+                                    <li>Dari dua kelompok benda menggunakan benda konkret</li>
+                                    <li>Menghitung maju dan mundur sampai dengan 10</li>
+                                    <li>Menyusun bilangan dengan menggunakan model konkret</li>
+                                    <li>Mengurai bilangan dengan menggunakan model konkret</li>
+                                </ul>
+                            </td>
+                            <td>Ayo Membilang sampai dengan 10<br>
+                                A. Menghitung, Membaca, dan Menulis Bilangan<br>
+                                B. Membandingkan Banyak Benda<br>
+                                C. Menghitung Maju dan Mundur<br>
+                                D. Pasangan Bilangan
+                            </td>
+                            <td>8 JP</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>
+                                <ul>
+                                    <li>Menunjukkan konsep penjumlahan sampai dengan 10 dengan benda konkret, gambar, cerita, atau manipulatif lainnya</li>
+                                    <li>Menuliskan operasi hitung untuk memecahkan masalah penjumlahan</li>
+                                    <li>Menggunakan berbagai strategi penjumlahan (menghitung maju, pasangan bilangan, penjumlahan ganda, penjumlahan yang hasilnya 10)</li>
+                                    <li>Menyelesaikan masalah terkait penjumlahan dengan satu langkah penyelesaian</li>
+                                </ul>
+                            </td>
+                            <td>Penjumlahan sampai dengan 10<br>
+                                A. Cerita Penjumlahan<br>
+                                B. Berbagai Cara Melakukan Penjumlahan<br>
+                                C. Soal Cerita Penjumlahan
+                            </td>
+                            <td>8 JP</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>
+                                <ul>
+                                    <li>Menunjukkan konsep penjumlahan dan pengurangan sampai dengan 10 dengan benda konkret, gambar, cerita, atau manipulatif lainnya</li>
+                                    <li>Menggunakan berbagai strategi pengurangan (menghitung mundur, pasangan bilangan, pengurangan dengan 10)</li>
+                                    <li>Menunjukkan fakta hubungan antara operasi penjumlahan dan pengurangan</li>
+                                    <li>Menyelesaikan masalah terkait pengurangan dengan satu langkah penyelesaian</li>
+                                </ul>
+                            </td>
+                            <td>Pengurangan sampai dengan 10<br>
+                                A. Cerita Pengurangan<br>
+                                B. Berbagai Cara Melakukan Pengurangan<br>
+                                C. Hubungan Penjumlahan dan Pengurangan<br>
+                                D. Soal Cerita Pengurangan
+                            </td>
+                            <td>8 JP</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>
+                                <ul>
+                                    <li>Mendeskripsikan benda berdasarkan bentuknya</li>
+                                    <li>Mengenal bentuk dasar, yaitu segitiga, segi empat, dan bentuk lengkung</li>
+                                    <li>Memberi nama bentuk dasar, yaitu segitiga, segi empat, dan bentuk lengkung</li>
+                                    <li>Mengelompokkan benda berdasarkan bentuk, warna, dan ukurannya</li>
+                                    <li>Menyusun bentuk bangun</li>
+                                    <li>Mengurai bentuk bangun</li>
+                                </ul>
+                            </td>
+                            <td>Mengenal Bentuk<br>
+                                A. Mendeskripsikan Benda Berdasarkan Bentuk<br>
+                                B. Mengelompokkan Benda<br>
+                                C. Menyusun dan Mengurai Bentuk Bangun
+                            </td>
+                            <td>8 JP</td>
+                            <td>1</td>
+                        </tr>
+                        <tr class="semester-divider">
+                            <td colspan="5">SEMESTER 2</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>
+                                <ul>
+                                    <li>Menghitung bilangan dari 11 sampai dengan 20</li>
+                                    <li>Membaca bilangan dari 11 sampai dengan 20</li>
+                                    <li>Menulis bilangan dari 11 sampai dengan 20</li>
+                                    <li>Membandingkan dua bilangan</li>
+                                    <li>Menghitung maju dan mundur</li>
+                                    <li>Menemukan pasangan bilangan</li>
+                                </ul>
+                            </td>
+                            <td>Ayo Membilang 11 sampai dengan 20<br>
+                                A. Menghitung, Membaca, dan Menulis Bilangan<br>
+                                B. Menghitung Maju dan Mundur<br>
+                                C. Nilai Tempat<br>
+                                D. Membandingkan Bilangan
+                            </td>
+                            <td>8 JP</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>
+                                <ul>
+                                    <li>Menunjukkan lebih dari, kurang dari, dan beda atau selisih dari dua kelompok benda menggunakan benda konkret</li>
+                                    <li>Menggunakan berbagai strategi penjumlahan antarbilangan satuan (menghitung maju, menghitung dengan 10, dan penjumlahan berulang)</li>
+                                    <li>Menggunakan berbagai strategi penjumlahan antara bilangan puluhan dan bilangan satuan yang hasilnya kurang dari 20 (menghitung maju, pasangan bilangan, dan nilai tempat)</li>
+                                    <li>Menggunakan berbagai strategi pengurangan yang hasilnya kurang dari 20 (menghitung mundur, pasangan bilangan, dan nilai tempat)</li>
+                                </ul>
+                            </td>
+                            <td>Penjumlahan dan Pengurangan sampai dengan 20<br>
+                                A. Mengenal Konsep Lebih dari, Kurang dari, dan Selisih<br>
+                                B. Penjumlahan yang Hasilnya kurang dari 20<br>
+                                C. Pengurangan yang Hasilnya Kurang dari 20
+                            </td>
+                            <td>8 JP</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>
+                                <ul>
+                                    <li>Membandingkan panjang dari dua benda</li>
+                                    <li>Mengurutkan benda berdasarkan panjang benda</li>
+                                    <li>Mengestimasi panjang benda dengan menggunakan satuan tidak baku</li>
+                                    <li>Mengukur panjang benda menggunakan objek lain dalam satuan tidak baku</li>
+                                </ul>
+                            </td>
+                            <td>Mengukur Panjang Benda<br>
+                                A. Membandingkan dan Mengurutkan Panjang Benda<br>
+                                B. Mengukur Panjang Benda
+                            </td>
+                            <td>8 JP</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>
+                                <ul>
+                                    <li>Mengelompokkan objek</li>
+                                    <li>Menghitung setiap kelompok objek</li>
+                                    <li>Membaca daftar dan tabel maksimal empat kategori</li>
+                                    <li>Membaca diagram gambar maksimal empat kategori</li>
+                                    <li>Menginterpretasikan diagram gambar maksimal empat kategori</li>
+                                </ul>
+                            </td>
+                            <td>Mengenal Diagram<br>
+                                A. Mengelompokkan Data<br>
+                                B. Diagram Gambar
+                            </td>
+                            <td>8 JP</td>
+                            <td>2</td>
+                        </tr>
+                        <tr class="semester-divider">
+                            <td colspan="3">Cadangan Jam Pelajaran</td>
+                            <td colspan="2">8 JP</td>
+                        </tr>
+                        <tr class="semester-divider">
+                            <td colspan="3">Jumlah Jam Pelajaran</td>
+                            <td colspan="2">64 JP</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="signature-section">
+                    <div class="signature">
+                        <h4>Kepala UPT SD Negeri 55 Otting</h4>
+                        <p>ANDI MUIN K, S.Pd.</p>
+                        <p>NIP. 19690315 200701 1 028</p>
+                    </div>
+                    <div class="signature">
+                        <h4>Guru Kelas 1</h4>
+                        <p>SYAMSUDDIN, S.Pd.</p>
+                        <p>NIP. 19820719 202221 1 015</p>
+                        <p>Otting, 14 Juli 2025</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pendidikan Pancasila -->
+            <div class="subject-content" id="pkn">
+                <div class="subject-header">
+                    <h3>PROGRAM TAHUNAN - PENDIDIKAN PANCASILA</h3>
+                    <p><strong>Nama Penyusun:</strong> Syamsuddin, S.Pd.</p>
+                    <p><strong>Jumlah JP:</strong> 64 JP (4 Bab)</p>
+                    <div class="file-origin">Sumber: PROTA PKN 1.docx</div>
+                </div>
+                
+                <table class="prota-table">
+                    <thead>
+                        <tr>
+                            <th width="5%">No</th>
+                            <th width="45%">Alur Tujuan Pembelajaran (ATP)</th>
+                            <th width="30%">Materi</th>
+                            <th width="10%">JP</th>
+                            <th width="10%">Smt</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="semester-divider">
+                            <td colspan="5">SEMESTER 1</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>
+                                Murid mampu Mengenal diri sendiri, mengenal perbedaan teman berdasarkan jenis kelamin, dan pentingnya aturan ketika bermain bersama teman-teman
+                            </td>
+                            <td>Bab 1 Aku dan Teman Temanku<br>
+                                A. Aku Mengenal Diriku<br>
+                                B. Aku Mengenal Teman-Temanku<br>
+                                C. Aku Mengenal Aturan Main Bersama Teman
+                            </td>
+                            <td>16 JP</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>
+                                Murid mampu Mematuhi aturan, dan peduli dengan lingkungan tempat tinggal
+                            </td>
+                            <td>Bab 2 Aku Patuh Pada Aturan<br>
+                                A. Aturan dalam Keluargaku<br>
+                                B. Aku Mematuhi Aturan di Rumah<br>
+                                C. Aku Peduli dengan Tempat Tinggalku
+                            </td>
+                            <td>16 JP</td>
+                            <td>1</td>
+                        </tr>
+                        <tr class="semester-divider">
+                            <td colspan="5">SEMESTER 2</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>
+                                Murid mampu Mengenal bendera Negara, lagu kebangsaan Indonesia Raya dan simbol-simbol Pancasila
+                            </td>
+                            <td>Bab 3 Aku Mengenal Indonesia<br>
+                                A. Aku Mengenal Bendera Indonesia<br>
+                                B. Aku Mengenal Lagu Kebangsaan Indonesia<br>
+                                C. Aku Mengenal Simbol Lambang Garuda Pancasila
+                            </td>
+                            <td>16 JP</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>
+                                Murid mampu Mengenal lingkungan tempat tinggal, menerapkan sikap gotong royong, mengenal lingkungan sekolah, dan peduli pada lingkungan sekolah
+                            </td>
+                            <td>Bab 4 Aku dan Lingkunganku<br>
+                                A. Aku Mengenal Lingkungan Tempat Tinggalku<br>
+                                B. Aku Suka Bergotong Royong<br>
+                                C. Aku Mengenal Lingkungan Sekolah<br>
+                                D. Aku Peduli Pada Lingkungan Sekolah
+                            </td>
+                            <td>16 JP</td>
+                            <td>2</td>
+                        </tr>
+                        <tr class="semester-divider">
+                            <td colspan="3">Cadangan Jam Pelajaran</td>
+                            <td colspan="2">8 JP</td>
+                        </tr>
+                        <tr class="semester-divider">
+                            <td colspan="3">Jumlah Jam Pelajaran</td>
+                            <td colspan="2">64 JP</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="signature-section">
+                    <div class="signature">
+                        <h4>Kepala UPT SD Negeri 55 Otting</h4>
+                        <p>ANDI MUIN K, S.Pd.</p>
+                        <p>NIP. 19690315 200701 1 028</p>
+                    </div>
+                    <div class="signature">
+                        <h4>Guru Kelas 1</h4>
+                        <p>SYAMSUDDIN, S.Pd.</p>
+                        <p>NIP. 19820719 202221 1 015</p>
+                        <p>Otting, 14 Juli 2025</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bahasa Bugis Bone -->
+            <div class="subject-content" id="bugis">
+                <div class="subject-header">
+                    <h3>PROGRAM TAHUNAN - BAHASA BUGIS BONE</h3>
+                    <p><strong>Jumlah JP:</strong> 64 JP (4 Bab)</p>
+                    <div class="file-origin">Sumber: PROTA BUGIS.pdf</div>
+                </div>
+                
+                <table class="prota-table">
+                    <thead>
+                        <tr>
+                            <th width="5%">No</th>
+                            <th width="45%">Alur Tujuan Pembelajaran (ATP)</th>
+                            <th width="30%">Keterangan</th>
+                            <th width="10%">JP</th>
+                            <th width="10%">Smt</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>
+                                <ul>
+                                    <li>Bersikap baik dalam menyimak pelafalan aksara Lontara' melalui elong 'hurupe lontara'</li>
+                                    <li>Mampu bersikap terampil menjadi pembaca dan pemirsa yang baik melalui tayangan gambar</li>
+                                    <li>Bersikap santun dalam memperkenalkan diri dengan menggunakan bahasa sehari-hari</li>
+                                    <li>Mampu bersikap baik dalam menulis di udara melalui gerakan tangan</li>
+                                </ul>
+                            </td>
+                            <td>Pengenalan dasar aksara Lontara' dan keterampilan berbahasa Bugis</td>
+                            <td>16 JP</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>
+                                <ul>
+                                    <li>Mengidentifikasi ada (kosa kata) dari anggota tubuhnya sendiri</li>
+                                    <li>Mampu mengenal aksara lontara melalui kartu huruf</li>
+                                    <li>Berbicara santun menggunakan lafal dan intonasi yang tepat sesuai konteks komunikasi yang ada saat memperkenalkan diri</li>
+                                    <li>Mampu bersikap baik dalam menulis di atas kertas melalui kartu huruf</li>
+                                </ul>
+                            </td>
+                            <td>Kosakata anggota tubuh dan penerapan aksara Lontara' dalam tulisan</td>
+                            <td>16 JP</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>
+                                <ul>
+                                    <li>Mengidentifikasi baik loroseng ada (kalimat) melalui lagu 'Lao Massikola' yang diperdengarkan</li>
+                                    <li>Mampu membaca suku kata dan kata melalui tayangan gambar (nama benda)</li>
+                                    <li>Melafalkan aksara Lontara dengan tepat melalui tayangan audio maupun visual</li>
+                                    <li>Mampu menunjukkan keterampilan menulis aksara lontara melalui teknik menulis di udara dan di atas kertas</li>
+                                </ul>
+                            </td>
+                            <td>Pengenalan kalimat dan lagu tradisional Bugis</td>
+                            <td>16 JP</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>
+                                <ul>
+                                    <li>Menyimak dengan baik sanja' (puisi) "Paddoangenna Indoku" melalui video yang diputarkan</li>
+                                    <li>Mampu mengidentifikasi atau menyebutkan nama anggota tubuhnya sendiri</li>
+                                    <li>Terampil bertanya dengan menggunakan kata tanya memberikan komentar kepada (teman, guru, dan orang dewasa) dengan baik dan santun (Mappetable)</li>
+                                    <li>Mampu menulis nama anggota tubuh melalui lagu (elong), watakkale (sesuai kondisi)</li>
+                                    <li>Terampil menulis indah aksara lontara melalui menjiblak garis putus-putus (mappabajang)</li>
+                                </ul>
+                            </td>
+                            <td>Puisi tradisional Bugis dan keterampilan menulis aksara Lontara'</td>
+                            <td>16 JP</td>
+                            <td>2</td>
+                        </tr>
+                        <tr class="semester-divider">
+                            <td colspan="3">Jumlah Jam Pelajaran</td>
+                            <td colspan="2">64 JP</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="signature-section">
+                    <div class="signature">
+                        <h4>Kepala UPT SD Negeri 55 Otting</h4>
+                        <p>ANDI MUIN K, S.Pd.</p>
+                        <p>NIP. 19690315 200701 1 028</p>
+                    </div>
+                    <div class="signature">
+                        <h4>Guru Kelas 1</h4>
+                        <p>SYAMSUDDIN, S.Pd.</p>
+                        <p>NIP. 19820719 202221 1 015</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Seni Rupa -->
+            <div class="subject-content" id="seni">
+                <div class="subject-header">
+                    <h3>PROGRAM TAHUNAN - SENI RUPA</h3>
+                    <p><strong>Jumlah JP:</strong> 40 JP (20 ATP)</p>
+                    <div class="file-origin">Sumber: Prota Kelas 1.xlsx (Lembar SENI RUPA)</div>
+                </div>
+                
+                <table class="prota-table">
+                    <thead>
+                        <tr>
+                            <th width="5%">No</th>
+                            <th width="60%">Alur Tujuan Pembelajaran (ATP)</th>
+                            <th width="10%">JP</th>
+                            <th width="10%">Smt</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="semester-divider">
+                            <td colspan="4">SEMESTER 1</td>
+                        </tr>
+                        <tr>
+                            <td>1.1</td>
+                            <td>
+                                <ul>
+                                    <li>Murid mampu mengasosiasikan definisi "indah" atau "artistik" dari benda-benda di sekitarnya</li>
+                                    <li>Murid mampu mendokumentasikan hasil pengamatannya</li>
+                                    <li>Murid percaya diri dalam memilih alat dalam proses dalam berkreasi</li>
+                                </ul>
+                            </td>
+                            <td>2 JP</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>1.2</td>
+                            <td>
+                                <ul>
+                                    <li>Murid mampu mengidentifikasi berbagai jenis garis, pada gambar ataupun pada benda-benda di sekitarnya</li>
+                                    <li>Murid dapat menggambar sebuah pohon dengan menggunakan beberapa macam garis</li>
+                                    <li>Murid membandingkan dan mengambil kesimpulan tentang arti garis tipis dan garis tebal yang ditemukan pada pohon</li>
+                                </ul>
+                            </td>
+                            <td>2 JP</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>1.3</td>
+                            <td>
+                                <ul>
+                                    <li>Murid mampu merasakan arah dan gerakan yang direpresentasikan oleh garis</li>
+                                    <li>Murid mengeksplorasi garis dalam hubungannya dengan musik dan perasaan</li>
+                                </ul>
+                            </td>
+                            <td>1 JP</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>1.4</td>
+                            <td>
+                                <ul>
+                                    <li>Murid memahami bahwa berbagai jenis bentuk dibentuk oleh berbagai macam garis</li>
+                                    <li>Murid dapat mengidentifikasi nama-nama bentuk geometris (segitiga, segiempat, lingkaran, oval, trapesium) dan bentuk organik</li>
+                                </ul>
+                            </td>
+                            <td>2 JP</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>1.5</td>
+                            <td>
+                                <ul>
+                                    <li>Murid mampu berkreasi dan mampu memilih bentuk yang diperlukannya</li>
+                                    <li>Murid dapat mengidentifikasi nama-nama bentuk geometris dan bentuk organik</li>
+                                    <li>Murid dapat menggunakan lem dan gunting untuk membuat kolase</li>
+                                </ul>
+                            </td>
+                            <td>2 JP</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>1.6</td>
+                            <td>
+                                <ul>
+                                    <li>Murid mengenal berbagai macam topeng dari Indonesia</li>
+                                    <li>Murid mengenal konsep simetri</li>
+                                    <li>Murid menggunakan teknik lipat, gunting dan tempel untuk membuat topeng kertas</li>
+                                </ul>
+                            </td>
+                            <td>1 JP</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>1.7</td>
+                            <td>
+                                <ul>
+                                    <li>Murid mengerti kosakata bentuk dan garis, nama-nama warna, warna panas, warna dingin dan warna netral, juga kosakata "tumpang tindih", dan dapat mengaplikasikan pemahamannya ke dalam karya</li>
+                                    <li>Murid dapat melakukan refleksi akan karyanya, membuat alternatif karya, dan membandingkannya</li>
+                                    <li>Murid dapat memilih warna ataupun karya yang ingin digunakan, dan dapat menyebutkan alasannya</li>
+                                </ul>
+                            </td>
+                            <td>2 JP</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>1.8</td>
+                            <td>
+                                <ul>
+                                    <li>Murid dapat mengidentifikasi bentuk berulang</li>
+                                    <li>Murid dapat membuat kreasi dari bentuk yang berulang dengan cara memilih minimal 1 teknik: menggambar, kolase, menganyam, dan lain-lain</li>
+                                </ul>
+                            </td>
+                            <td>2 JP</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>1.9</td>
+                            <td>
+                                <ul>
+                                    <li>Murid mengenal dan dapat menggunakan kosakata: Huruf, Abjad, Alfabet, Fonts</li>
+                                    <li>Murid mengenali bahwa huruf dapat dipresentasikan dalam berbagai bentuk</li>
+                                    <li>Murid mampu merancang tulisan indah sederhana, dan menggunakan pola sederhana sebagai dekorasi</li>
+                                </ul>
+                            </td>
+                            <td>2 JP</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>1.10</td>
+                            <td>
+                                <ul>
+                                    <li>Murid mengenal dan dapat menggunakan kosakata: Bangunan, Gedung, Rumah, Kediaman, Arsitek (orang yang merancang bangunan), Arsitektur (bentuk hasil rancangan bangunan)</li>
+                                    <li>Murid mengamati bentuk, bidang dan ukuran dalam sebuah bangunan</li>
+                                </ul>
+                            </td>
+                            <td>2 JP</td>
+                            <td>1</td>
+                        </tr>
+                        <tr class="semester-divider">
+                            <td colspan="4">SEMESTER 2</td>
+                        </tr>
+                        <tr>
+                            <td>1.11</td>
+                            <td>
+                                <ul>
+                                    <li>Murid mengenal dan dapat menggunakan kosakata: Bangunan, Gedung, Rumah, Kediaman, Arsitek (orang yang merancang bangunan), Arsitektur (bentuk hasil rancangan bangunan)</li>
+                                    <li>Murid dapat mengolah bentuk dan merakit model 3 dimensi sederhana</li>
+                                    <li>Murid dapat menggunakan bahan-bahan bekas di sekitarnya</li>
+                                    <li>Murid memahami bahwa model 3 dimensional dapat membantu perencanaan bangunan sebenarnya</li>
+                                </ul>
+                            </td>
+                            <td>2 JP</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>1.12</td>
+                            <td>
+                                <ul>
+                                    <li>Murid mengidentifikasi bentuk alami/natural dan bentuk buatan manusia</li>
+                                    <li>Murid memahami bahwa dirinya dapat berperan merancang, merawat dan mengembangkan lingkungannya</li>
+                                    <li>Murid mampu mengatur model-model 3 dimensional sebuah bangunan menjadi model sebuah lingkungan kota</li>
+                                </ul>
+                            </td>
+                            <td>2 JP</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>1.13</td>
+                            <td>
+                                <ul>
+                                    <li>Murid mengenal dan dapat menggunakan kosakata: Lengkung, Kurva, Bergelombang, Spiral, Garis Rangka/Outline</li>
+                                    <li>Murid mengidentifikasi garis dan bidang dalam sebuah gambar/lukisan dan alam sekitar</li>
+                                    <li>Murid dapat menggunakan garis lengkung dan bidang atau garis lurus dan bidang dalam karyanya</li>
+                                    <li>Murid menciptakan karya menggunakan garis lengkung dan garis lurus</li>
+                                </ul>
+                            </td>
+                            <td>1 JP</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>1.14</td>
+                            <td>
+                                <ul>
+                                    <li>Murid mengenal dan dapat menggunakan kosakata: Tekstur, Kasar, Halus, Bergerigi, Berbulu, Licin</li>
+                                    <li>Murid mampu mengenali dan menggunakan tekstur yang didapat dari lingkungan sekitar ke dalam karyanya</li>
+                                </ul>
+                            </td>
+                            <td>2 JP</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>1.15</td>
+                            <td>
+                                <ul>
+                                    <li>Murid mengenal dan dapat menggunakan kosakata: Wajah, Muka, Rupa, Ekspresi, Karakteristik, Ciri-Ciri</li>
+                                    <li>Murid mengenali persamaan dan perbedaan karakteristik wajahnya dan teman-teman sekelasnya</li>
+                                    <li>Murid mampu mengenali bentuk dasar geometris/non geometris dan menggunakan garis untuk menggambar atau membuat kolase untuk membuat potret wajah sendiri atau orang lain</li>
+                                </ul>
+                            </td>
+                            <td>2 JP</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>1.16</td>
+                            <td>
+                                <ul>
+                                    <li>Murid mengamati dan mengenali karakteristik hewan tertentu</li>
+                                    <li>Murid mampu menuangkan pengalaman, pengamatan atau hasil tiruan bentuk ke dalam karya</li>
+                                    <li>Murid mampu mengenali bentuk dasar geometris/non geometris dan menggunakan garis untuk membuat karya 2 atau 3 dimensi</li>
+                                </ul>
+                            </td>
+                            <td>1 JP</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>1.17</td>
+                            <td>
+                                <ul>
+                                    <li>Murid mengenal dan dapat menggunakan kosakata: Campur, Warna Primer, Warna Sekunder</li>
+                                    <li>Murid dapat menggunakan krayon minyak dengan krayon dalam posisi tidur dan posisi berdiri</li>
+                                    <li>Murid dapat mengeksplorasi proses pencampuran warna dan menemukan berbagai macam warna sebagai hasilnya</li>
+                                </ul>
+                            </td>
+                            <td>2 JP</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>1.18</td>
+                            <td>
+                                <ul>
+                                    <li>Murid mengenal dan dapat menggunakan kosakata: Lukisan, Warna Terang, Warna Gelap, Outline (garis tebal yang memperjelas sebuah bentuk)</li>
+                                    <li>Murid dapat melihat dan merasakan berbagai gradasi warna</li>
+                                    <li>Murid dapat membuat sebuah lukisan yang didominasi dengan warna terang, dan menggunakan warna gelap untuk detail bagian</li>
+                                </ul>
+                            </td>
+                            <td>2 JP</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>1.19</td>
+                            <td>
+                                <ul>
+                                    <li>Murid memahami perbedaan antara bentuk natural dan bentuk buatan manusia</li>
+                                    <li>Murid mampu menuangkan pengalaman, pengamatan atau hasil imitasi bentuk ke dalam karya</li>
+                                    <li>Murid mampu membuat karya cetak dengan menggunakan pewarna basah dan bentuk natural dari dedaunan yang mereka pilih</li>
+                                </ul>
+                            </td>
+                            <td>2 JP</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>1.20</td>
+                            <td>
+                                <ul>
+                                    <li>Murid mengenal dan dapat menggunakan kosakata: Mixed Media (Media Campuran)</li>
+                                    <li>Murid mampu menuangkan pengalaman, pengamatan atau hasil tiruan bentuk ke dalam karya</li>
+                                    <li>Murid mampu menerapkan pengetahuan dan keterampilan yang telah dipelajarinya untuk membuat karya berdasarkan minat atau ketersediaan bahan di sekitarnya</li>
+                                </ul>
+                            </td>
+                            <td>2 JP</td>
+                            <td>2</td>
+                        </tr>
+                        <tr class="semester-divider">
+                            <td colspan="2">Jumlah Jam Pelajaran</td>
+                            <td colspan="2">40 JP</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="note">
+                    <p><strong>Catatan:</strong> Data Seni Rupa berasal dari file Excel dengan format yang berbeda dari file Word. Jumlah JP untuk Seni Rupa adalah 40 JP, berbeda dengan mata pelajaran lain yang memiliki 64 JP.</p>
+                </div>
+                
+                <div class="signature-section">
+                    <div class="signature">
+                        <h4>Kepala UPT SD Negeri 55 Otting</h4>
+                        <p>ANDI MUIN K, S.Pd.</p>
+                        <p>NIP. 19690315 200701 1 028</p>
+                    </div>
+                    <div class="signature">
+                        <h4>Guru Kelas 1</h4>
+                        <p>SYAMSUDDIN, S.Pd.</p>
+                        <p>NIP. 19820719 202221 1 015</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>PROGRAM TAHUNAN (PROTA) KELAS I - UPT SD NEGERI 55 OTTING</p>
+            <p>Tahun Pelajaran 2025/2026 | © Aplikasi PROTA Offline</p>
+            <p style="margin-top: 10px; font-size: 14px;">
+                <i class="fas fa-info-circle"></i> 
+                Aplikasi ini menggabungkan semua file PROTA untuk Kelas 1: Bahasa Indonesia, Matematika, Pendidikan Pancasila, Bahasa Bugis Bone, dan Seni Rupa.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mengatur navigasi antar mata pelajaran
+            const subjectButtons = document.querySelectorAll('.subject-btn');
+            const subjectContents = document.querySelectorAll('.subject-content');
+            
+            subjectButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const subjectId = this.getAttribute('data-subject');
+                    
+                    // Menghapus kelas aktif dari semua tombol dan konten
+                    subjectButtons.forEach(btn => btn.classList.remove('active'));
+                    subjectContents.forEach(content => content.classList.remove('active'));
+                    
+                    // Menambahkan kelas aktif ke tombol yang diklik
+                    this.classList.add('active');
+                    
+                    // Menampilkan konten yang sesuai
+                    document.getElementById(subjectId).classList.add('active');
+                });
+            });
+            
+            // Menambahkan fitur untuk menyimpan sebagai file HTML offline
+            const saveBtn = document.createElement('a');
+            saveBtn.className = 'download-btn';
+            saveBtn.innerHTML = '<i class="fas fa-download"></i> Simpan sebagai HTML Offline';
+            saveBtn.href = 'javascript:void(0)';
+            saveBtn.onclick = function() {
+                const htmlContent = document.documentElement.outerHTML;
+                const blob = new Blob([htmlContent], {type: 'text/html'});
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'PROTA_Kelas_1_UPT_SD_Negeri_55_Otting.html';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            };
+            
+            document.querySelector('.navigation').appendChild(saveBtn);
+        });
+    </script>
+
+</body></html>
